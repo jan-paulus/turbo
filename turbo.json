@@ -6,6 +6,7 @@
       "dependsOn": ["^build"]
     },
     "//#lint": {},
+    "lint": {},
     "check-types": {
       "dependsOn": ["//#build:ts", "^build"]
     },
@@ -27,7 +28,7 @@
       "dependsOn": []
     },
     "//#check:fmt": {
-      "dependsOn": ["//#check:prettier", "//#check:toml", "//#lint"]
+      "dependsOn": ["//#check:prettier", "//#check:toml"]
     },
     "//#run-example": {
       "inputs": [
