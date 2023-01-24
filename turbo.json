@@ -28,7 +28,7 @@
       "dependsOn": []
     },
     "//#check:fmt": {
-      "dependsOn": ["//#check:prettier", "//#check:toml"]
+      "dependsOn": ["//#check:prettier", "//#check:toml", "lint"]
     },
     "//#run-example": {
       "inputs": [
