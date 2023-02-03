@@ -7,8 +7,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('id' type=static),
+            Str(
+                Word(
+                    Atom('id' type=static),
+                ),
             ),
         ),
         ast_path: [
@@ -95,8 +97,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('ids' type=inline),
+            Str(
+                Word(
+                    Atom('ids' type=inline),
+                ),
             ),
         ),
         ast_path: [
@@ -183,8 +187,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('modules' type=inline),
+            Str(
+                Word(
+                    Atom('modules' type=inline),
+                ),
             ),
         ),
         ast_path: [
@@ -271,8 +277,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('r' type=inline),
+            Str(
+                Word(
+                    Atom('r' type=inline),
+                ),
             ),
         ),
         ast_path: [
@@ -399,8 +407,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('r' type=inline),
+            Str(
+                Word(
+                    Atom('r' type=inline),
+                ),
             ),
         ),
         args: [
@@ -528,8 +538,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('d' type=static),
+            Str(
+                Word(
+                    Atom('d' type=static),
+                ),
             ),
         ),
         ast_path: [
@@ -656,8 +668,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('d' type=static),
+            Str(
+                Word(
+                    Atom('d' type=static),
+                ),
             ),
         ),
         args: [
@@ -675,8 +689,10 @@
                     [
                         KeyValue(
                             Constant(
-                                StrWord(
-                                    Atom('default' type=static),
+                                Str(
+                                    Word(
+                                        Atom('default' type=static),
+                                    ),
                                 ),
                             ),
                             Variable(
@@ -804,8 +820,10 @@
         args: [
             Value(
                 Constant(
-                    StrWord(
-                        Atom('fs/promises' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('fs/promises' type=dynamic),
+                        ),
                     ),
                 ),
             ),
@@ -933,8 +951,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('readFile' type=dynamic),
+            Str(
+                Word(
+                    Atom('readFile' type=dynamic),
+                ),
             ),
         ),
         ast_path: [
@@ -1106,22 +1126,28 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('readFile' type=dynamic),
+            Str(
+                Word(
+                    Atom('readFile' type=dynamic),
+                ),
             ),
         ),
         args: [
             Value(
                 Constant(
-                    StrWord(
-                        Atom('./hello.txt' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('./hello.txt' type=dynamic),
+                        ),
                     ),
                 ),
             ),
             Value(
                 Constant(
-                    StrWord(
-                        Atom('utf-8' type=inline),
+                    Str(
+                        Word(
+                            Atom('utf-8' type=inline),
+                        ),
                     ),
                 ),
             ),
@@ -1274,8 +1300,10 @@
                 ),
             ),
             Constant(
-                StrWord(
-                    Atom('status' type=inline),
+                Str(
+                    Word(
+                        Atom('status' type=inline),
+                    ),
                 ),
             ),
             [
@@ -1289,8 +1317,10 @@
             ],
         ),
         prop: Constant(
-            StrWord(
-                Atom('json' type=inline),
+            Str(
+                Word(
+                    Atom('json' type=inline),
+                ),
             ),
         ),
         ast_path: [
@@ -1434,8 +1464,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('status' type=inline),
+            Str(
+                Word(
+                    Atom('status' type=inline),
+                ),
             ),
         ),
         ast_path: [
@@ -1594,8 +1626,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('status' type=inline),
+            Str(
+                Word(
+                    Atom('status' type=inline),
+                ),
             ),
         ),
         args: [
@@ -1758,8 +1792,10 @@
                 ),
             ),
             Constant(
-                StrWord(
-                    Atom('status' type=inline),
+                Str(
+                    Word(
+                        Atom('status' type=inline),
+                    ),
                 ),
             ),
             [
@@ -1773,8 +1809,10 @@
             ],
         ),
         prop: Constant(
-            StrWord(
-                Atom('json' type=inline),
+            Str(
+                Word(
+                    Atom('json' type=inline),
+                ),
             ),
         ),
         args: [
@@ -1784,8 +1822,10 @@
                     [
                         KeyValue(
                             Constant(
-                                StrWord(
-                                    Atom('users' type=inline),
+                                Str(
+                                    Word(
+                                        Atom('users' type=inline),
+                                    ),
                                 ),
                             ),
                             Variable(
@@ -1797,8 +1837,10 @@
                         ),
                         KeyValue(
                             Constant(
-                                StrWord(
-                                    Atom('hello' type=inline),
+                                Str(
+                                    Word(
+                                        Atom('hello' type=inline),
+                                    ),
                                 ),
                             ),
                             Variable(
@@ -1943,8 +1985,10 @@
         args: [
             Value(
                 Constant(
-                    StrWord(
-                        Atom('../../webpack-api-runtime.js' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('../../webpack-api-runtime.js' type=dynamic),
+                        ),
                     ),
                 ),
             ),
@@ -2029,8 +2073,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('C' type=inline),
+            Str(
+                Word(
+                    Atom('C' type=inline),
+                ),
             ),
         ),
         ast_path: [
@@ -2114,8 +2160,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('C' type=inline),
+            Str(
+                Word(
+                    Atom('C' type=inline),
+                ),
             ),
         ),
         args: [
@@ -2200,8 +2248,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('s' type=static),
+            Str(
+                Word(
+                    Atom('s' type=static),
+                ),
             ),
         ),
         ast_path: [
@@ -2507,8 +2557,10 @@
             ),
         ),
         prop: Constant(
-            StrWord(
-                Atom('exports' type=inline),
+            Str(
+                Word(
+                    Atom('exports' type=inline),
+                ),
             ),
         ),
         ast_path: [

@@ -42,8 +42,10 @@
                             Require,
                         ),
                         Constant(
-                            StrWord(
-                                Atom('resolve' type=inline),
+                            Str(
+                                Word(
+                                    Atom('resolve' type=inline),
+                                ),
                             ),
                         ),
                         [
@@ -86,13 +88,17 @@
             3,
             [
                 Constant(
-                    StrWord(
-                        Atom('../lib/a.js' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('../lib/a.js' type=dynamic),
+                        ),
                     ),
                 ),
                 Constant(
-                    StrWord(
-                        Atom('../lib/b.js' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('../lib/b.js' type=dynamic),
+                        ),
                     ),
                 ),
             ],
@@ -106,20 +112,26 @@
                 3,
                 [
                     Constant(
-                        StrWord(
-                            Atom('../lib/a.js' type=dynamic),
+                        Str(
+                            Word(
+                                Atom('../lib/a.js' type=dynamic),
+                            ),
                         ),
                     ),
                     Constant(
-                        StrWord(
-                            Atom('../lib/b.js' type=dynamic),
+                        Str(
+                            Word(
+                                Atom('../lib/b.js' type=dynamic),
+                            ),
                         ),
                     ),
                 ],
             ),
             Constant(
-                StrWord(
-                    Atom('map' type=static),
+                Str(
+                    Word(
+                        Atom('map' type=static),
+                    ),
                 ),
             ),
             [
@@ -140,20 +152,26 @@
                 3,
                 [
                     Constant(
-                        StrWord(
-                            Atom('../lib/a.js' type=dynamic),
+                        Str(
+                            Word(
+                                Atom('../lib/a.js' type=dynamic),
+                            ),
                         ),
                     ),
                     Constant(
-                        StrWord(
-                            Atom('../lib/b.js' type=dynamic),
+                        Str(
+                            Word(
+                                Atom('../lib/b.js' type=dynamic),
+                            ),
                         ),
                     ),
                 ],
             ),
             Constant(
-                StrWord(
-                    Atom('map' type=static),
+                Str(
+                    Word(
+                        Atom('map' type=static),
+                    ),
                 ),
             ),
             [
@@ -174,20 +192,26 @@
                 3,
                 [
                     Constant(
-                        StrWord(
-                            Atom('../lib/a.js' type=dynamic),
+                        Str(
+                            Word(
+                                Atom('../lib/a.js' type=dynamic),
+                            ),
                         ),
                     ),
                     Constant(
-                        StrWord(
-                            Atom('../lib/b.js' type=dynamic),
+                        Str(
+                            Word(
+                                Atom('../lib/b.js' type=dynamic),
+                            ),
                         ),
                     ),
                 ],
             ),
             Constant(
-                StrWord(
-                    Atom('map' type=static),
+                Str(
+                    Word(
+                        Atom('map' type=static),
+                    ),
                 ),
             ),
             [
@@ -245,8 +269,10 @@
                             Require,
                         ),
                         Constant(
-                            StrWord(
-                                Atom('resolve' type=inline),
+                            Str(
+                                Word(
+                                    Atom('resolve' type=inline),
+                                ),
                             ),
                         ),
                         [

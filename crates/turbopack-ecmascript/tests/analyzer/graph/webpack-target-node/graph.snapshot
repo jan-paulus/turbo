@@ -111,8 +111,10 @@
             ),
             [
                 Constant(
-                    StrWord(
-                        Atom('../../webpack-api-runtime.js' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('../../webpack-api-runtime.js' type=dynamic),
+                        ),
                     ),
                 ),
             ],
@@ -167,19 +169,25 @@
                 ),
             ),
             Constant(
-                StrWord(
-                    Atom('readFile' type=dynamic),
+                Str(
+                    Word(
+                        Atom('readFile' type=dynamic),
+                    ),
                 ),
             ),
             [
                 Constant(
-                    StrWord(
-                        Atom('./hello.txt' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('./hello.txt' type=dynamic),
+                        ),
                     ),
                 ),
                 Constant(
-                    StrWord(
-                        Atom('utf-8' type=inline),
+                    Str(
+                        Word(
+                            Atom('utf-8' type=inline),
+                        ),
                     ),
                 ),
             ],
@@ -208,8 +216,10 @@
             ),
             [
                 Constant(
-                    StrWord(
-                        Atom('fs/promises' type=dynamic),
+                    Str(
+                        Word(
+                            Atom('fs/promises' type=dynamic),
+                        ),
                     ),
                 ),
             ],
@@ -232,8 +242,10 @@
                     [
                         KeyValue(
                             Constant(
-                                StrWord(
-                                    Atom('id' type=static),
+                                Str(
+                                    Word(
+                                        Atom('id' type=static),
+                                    ),
                                 ),
                             ),
                             Constant(
@@ -251,8 +263,10 @@
                     [
                         KeyValue(
                             Constant(
-                                StrWord(
-                                    Atom('id' type=static),
+                                Str(
+                                    Word(
+                                        Atom('id' type=static),
+                                    ),
                                 ),
                             ),
                             Constant(
@@ -270,8 +284,10 @@
                     [
                         KeyValue(
                             Constant(
-                                StrWord(
-                                    Atom('id' type=static),
+                                Str(
+                                    Word(
+                                        Atom('id' type=static),
+                                    ),
                                 ),
                             ),
                             Constant(
