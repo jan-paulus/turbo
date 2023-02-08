@@ -12,44 +12,38 @@
 args = ???*0*
 - *0* max number of linking steps reached
 
-binPath = (???*0* | ???*1* | ???*8*)
+binPath = (???*0* | ???*1* | ???*6*)
 - *0* binPath
   ⚠️  pattern without value
 - *1* require.resolve*2*(
-        `${(???*3* | ???*4* | ???*5* | "esbuild-linux-64")}/${(???*6* | ???*7* | "esbuild.exe" | "bin/esbuild")}`
+        `${(undefined["pkg"] | ???*3* | ???*4* | "esbuild-linux-64")}/${(undefined["subpath"] | ???*5* | "esbuild.exe" | "bin/esbuild")}`
     )
   ⚠️  resolve.resolve non constant
 - *2* require.resolve: The require.resolve method from CommonJS
-- *3* undefined["pkg"]
-  ⚠️  nested operation
-- *4* pkg
+- *3* pkg
   ⚠️  pattern without value
-- *5* FreeVar(undefined)
+- *4* FreeVar(undefined)
   ⚠️  unknown global
-- *6* undefined["subpath"]
-  ⚠️  nested operation
-- *7* subpath
+- *5* subpath
   ⚠️  pattern without value
-- *8* ???*9*(pkg, subpath)
+- *6* ???*7*(pkg, subpath)
   ⚠️  unknown callee
-- *9* FreeVar(downloadedBinPath)
+- *7* FreeVar(downloadedBinPath)
   ⚠️  unknown global
 
-binTargetPath = `"esbuild"/resolved/lib${("/" | "")}pnpapi-${(???*0* | ???*1* | ???*2* | "esbuild-linux-64")}-${???*3*}`
-- *0* undefined["pkg"]
-  ⚠️  nested operation
-- *1* pkg
+binTargetPath = `"esbuild"/resolved/lib${("/" | "")}pnpapi-${(undefined["pkg"] | ???*0* | ???*1* | "esbuild-linux-64")}-${???*2*}`
+- *0* pkg
   ⚠️  pattern without value
-- *2* FreeVar(undefined)
+- *1* FreeVar(undefined)
   ⚠️  unknown global
-- *3* ???*4*(
-        (undefined["subpath"] | ???*6* | "esbuild.exe" | "bin/esbuild")
+- *2* ???*3*(
+        (undefined["subpath"] | ???*5* | "esbuild.exe" | "bin/esbuild")
     )
   ⚠️  unknown callee
-- *4* path*5*["basename"]
+- *3* path*4*["basename"]
   ⚠️  unsupported property on Node.js path module
-- *5* path: The Node.js path module: https://nodejs.org/api/path.html
-- *6* subpath
+- *4* path: The Node.js path module: https://nodejs.org/api/path.html
+- *5* subpath
   ⚠️  pattern without value
 
 command = ???*0*
