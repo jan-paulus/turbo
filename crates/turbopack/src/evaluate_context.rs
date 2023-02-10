@@ -1,6 +1,7 @@
 use turbo_tasks::Value;
 use turbopack_core::{
-    compile_time_info::CompileTimeInfoVc,
+    compile_time_defines,
+    compile_time_info::CompileTimeInfo,
     context::AssetContextVc,
     environment::{EnvironmentIntention, EnvironmentVc, ExecutionEnvironment, NodeJsEnvironment},
     resolve::options::ImportMapVc,
@@ -15,12 +16,20 @@ use crate::{
 pub fn node_evaluate_asset_context(import_map: Option<ImportMapVc>) -> AssetContextVc {
     ModuleAssetContextVc::new(
         TransitionsByNameVc::cell(Default::default()),
-        CompileTimeInfoVc::new(EnvironmentVc::new(
-            Value::new(ExecutionEnvironment::NodeJsBuildTime(
-                NodeJsEnvironment::default().cell(),
-            )),
-            Value::new(EnvironmentIntention::Build),
-        )),
+        CompileTimeInfo {
+            environment: EnvironmentVc::new(
+                Value::new(ExecutionEnvironment::NodeJsBuildTime(
+                    NodeJsEnvironment::default().cell(),
+                )),
+                Value::new(EnvironmentIntention::Build),
+            ),
+            defines: compile_time_defines!(
+                process.turbopack = true,
+                process.env.NODE_ENV = "development",
+            )
+            .cell(),
+        }
+        .cell(),
         ModuleOptionsContext {
             enable_typescript_transform: true,
             ..Default::default()
