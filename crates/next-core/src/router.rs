@@ -157,6 +157,7 @@ pub async fn route(
     let ExecutionContext {
         project_root,
         intermediate_output_path,
+        env,
     } = *execution_context.await?;
     let project_path = wrap_with_next_js_fs(project_root);
     let context = node_evaluate_asset_context(Some(get_next_build_import_map(project_path)));
@@ -172,6 +173,7 @@ pub async fn route(
         project_path,
         router_asset,
         project_root,
+        env,
         project_root,
         context,
         intermediate_output_path,
