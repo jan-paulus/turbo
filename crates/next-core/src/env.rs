@@ -23,7 +23,8 @@ pub async fn load_env(project_path: FileSystemPathVc) -> Result<ProcessEnvVc> {
         EnvMapVc::cell(indexmap! {
             "NODE_ENV".to_string() => node_env.to_string(),
         }),
-    );
+    )
+    .as_process_env();
 
     let files = [
         Some(format!(".env.{node_env}.local")),
