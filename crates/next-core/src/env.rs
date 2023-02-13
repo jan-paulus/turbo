@@ -60,7 +60,11 @@ pub async fn env_for_js(
     next_config: NextConfigVc,
 ) -> Result<ProcessEnvVc> {
     let env = if client {
-        FilterProcessEnvVc::new(env, "NEXT_PUBLIC_".to_string()).into()
+        FilterProcessEnvVc::new(
+            env,
+            vec!["NEXT_PUBLIC_".to_string(), "NODE_ENV".to_string()],
+        )
+        .into()
     } else {
         env
     };
@@ -85,8 +89,6 @@ pub async fn env_for_js(
     if next_config.react_strict_mode.unwrap_or(true) {
         map.insert("__NEXT_STRICT_MODE_APP".to_string(), "true".to_string());
     }
-
-    map.insert("NODE_ENV".to_string(), "development".to_string());
 
     Ok(CustomProcessEnvVc::new(env, EnvMapVc::cell(map)).into())
 }
