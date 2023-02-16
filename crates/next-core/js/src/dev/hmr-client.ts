@@ -287,9 +287,9 @@ function handleSocketMessage(msg: ServerMessage) {
   const runHooks = chunksWithUpdates.size === 0;
 
   if (aggregatedMsg.type !== "issues") {
-    if (runHooks) onBeforeRefresh();
+    onBeforeRefresh();
     triggerUpdate(aggregatedMsg);
-    if (runHooks) onRefresh();
+    onRefresh();
   }
 
   if (runHooks) onBuildOk();

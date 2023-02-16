@@ -5,7 +5,7 @@ import type { Issue } from "@vercel/turbopack-runtime/types/protocol";
 import * as Bus from "./bus";
 import { ShadowPortal } from "./components/ShadowPortal";
 import { Errors, SupportedErrorEvent } from "./container/Errors";
-import { ErrorBoundary } from "./ErrorBoundary";
+import { useErrorBoundary } from "./ErrorBoundary";
 import { Base } from "./styles/Base";
 import { ComponentStyles } from "./styles/ComponentStyles";
 import { CssReset } from "./styles/CssReset";
@@ -81,6 +81,7 @@ function reducer(state: OverlayState, ev: Bus.BusEvent): OverlayState {
             ? state.refreshState.errors
             : [],
         refreshState: { type: "idle" },
+        reactError: null,
       };
     }
     case Bus.TYPE_UNHANDLED_ERROR:
@@ -165,15 +166,24 @@ export default function ReactDevOverlay({
   }, [dispatch]);
 
   const onComponentError = React.useCallback(
-    (error: Error, componentStack: string | null) => {
-      Bus.emit({
+    (error: Error, _componentStack: string | null) => {
+      dispatch({
         type: Bus.TYPE_REACT_ERROR,
         error,
-        componentStack,
       });
     },
-    []
+    [dispatch]
   );
+
+  const [_error, resetError, ErrorBoundary] =
+    useErrorBoundary(onComponentError);
+
+  React.useEffect(() => {
+    // reset error if we clear it in the reducer
+    if (state.reactError == null) {
+      resetError();
+    }
+  }, [state.reactError, resetError]);
 
   const hasBuildError = state.issues.length > 0;
   const hasRuntimeErrors = state.errors.length > 0;
@@ -189,7 +199,6 @@ export default function ReactDevOverlay({
   return (
     <React.Fragment>
       <ErrorBoundary
-        onError={onComponentError}
         fallback={
           // When the overlay is global for the application and it wraps a component rendering `<html>`
           // we have to render the html shell otherwise the shadow root will not be able to attach
@@ -200,7 +209,7 @@ export default function ReactDevOverlay({
           ) : null
         }
       >
-        {children ?? null}
+        {children}
       </ErrorBoundary>
       {isMounted ? (
         <ShadowPortal globalOverlay={globalOverlay}>

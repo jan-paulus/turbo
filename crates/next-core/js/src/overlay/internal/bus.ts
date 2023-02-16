@@ -29,8 +29,7 @@ export type UnhandledRejection = {
 };
 export type ReactError = {
   type: typeof TYPE_REACT_ERROR;
-  error: Error;
-  componentStack: string | null;
+  error: Error | null;
 };
 
 export type BusEvent =
