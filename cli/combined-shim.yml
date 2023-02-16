@@ -16,6 +16,11 @@ builds:
       - arm64
     goamd64:
       - v1
+    ignore:
+      # windows arm64 uses the x86 binaries as rust does
+      # not have a gnu-compatible toolchain on that platform
+      - goos: windows
+        goarch: arm64
     prebuilt:
       path: dist-{{ .Os }}-{{ .Arch }}/turbo{{ .Ext }}
     hooks:
